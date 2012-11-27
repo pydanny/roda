@@ -20,5 +20,4 @@ psycopg2
 pylibmc==1.2.3
 wsgiref==0.1.2
 newrelic
-Pygments==1.5
 Pillow
