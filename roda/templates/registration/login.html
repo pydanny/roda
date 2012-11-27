@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Login{% endblock %}
+
+
+{% block content %}
+<div class="row-fluid">
+    <div class="span12">
+        <h2>Login</h2>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span4">
+        <h4>Don't have an account yet?</h4>
+        <p><a class="btn btn-success" href="{% url registration_register %}">Register</a> It's free!</p>
+    </div>
+    <div class="span6">
+      <form action="." method="post" class="form-stacked well">{% csrf_token %}
+      {{ form|crispy }}
+        <p><small><a href="{% url password_reset %}">Forgot your password?</a></small></p>
+        <div class="actions">
+          <input type="submit" class="btn btn-primary" value="Login">
+        </div>
+      {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+      </form>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extrajs %}
+<script>
+    $(document).ready(function(){
+        $("#id_username").focus();
+    });
+</script>
+{% endblock extrajs %}

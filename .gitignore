@@ -1,0 +1,12 @@
+*.log
+*.pot
+*.pyc
+local_settings.py
+
+# Mac cruft
+.DS_Store
+media
+
+*.pdf
+
+*.dump

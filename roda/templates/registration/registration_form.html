@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registration{% endblock  %}
+
+{% block content %}
+
+<div class="row-fluid">
+    <div class="span12">
+        <h2>Registration</h2>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="span5">
+        <h3>Member Benefits</h3>
+        <ul>
+            <li>It's AWESOME.</li>
+        </ul>
+    </div>
+    <div class="span7">
+        <form class='form-stacked well' action="" method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Register</button>
+          </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extrajs %}
+<script>
+    $(document).ready(function(){
+        $("#id_username").focus();
+    });
+</script>
+{% endblock extrajs %}

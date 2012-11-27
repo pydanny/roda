@@ -1,0 +1,1 @@
+web: newrelic-admin run-program python roda/manage.py run_gunicorn --settings=roda.settings.heroku -b "0.0.0.0:$PORT" -w 3

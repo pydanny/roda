@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block title %}Account activation complete{% endblock %}
+{% block page_title %}Account activation complete{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span6"> 
+  	         <p>Congratulations, your account has been activated.</p>
+
+             <p><a class="btn btn-success" href="{% url login %}">Login</a> and start having fun!</p>
+        </div>
+    </div>
+{% endblock %}
